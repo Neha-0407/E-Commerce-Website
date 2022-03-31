@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.0/css/all.min.css">
+    <link rel="stylesheet" href="About_Us.css">
+    <title>Abouts Us !</title>
+  </head>
+  <style>
+	@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+	html {
+		box-sizing: border-box;
+	}
+
+	*, *:before, *:after {
+		box-sizing: inherit;
+	}
+
+	body{
+		font-family: 'Roboto', sans-serif;
+		margin: 0;
+	}
+
+	/******************************************  HEADER  ***************************************************/
+
+	.main-header {
+		width: 100%;
+		background-color: rgba(0, 0, 0, 0.6);
+		background-size: cover;
+		background-image: url('books.jpg');
+		background-repeat: no-repeat;
+		background-size: 1500px 300px;
+		padding-bottom: 5px;
+		top: 0;
+	}
+
+	.top-bar{
+		background-color: inherit;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		max-height: 50px;
+	}
+
+	.top-bar h2 {
+		margin-left: 15px;
+		color: white;
+	}
+
+	.top-bar a{
+		margin: 0 25px 0 0;
+		color: white;
+		text-decoration: none;
+	}
+
+	.top-bar a:hover{
+		background-color: rgba(255, 255, 255, .1);
+	}
+
+	.nav ul {
+		margin: 0;
+	}
+
+	.nav li {
+		display: inline-block;
+	}
+
+	.nav a {
+		display: inline-block;
+		padding: 0.4em;
+		padding-bottom: 0.3em;
+		color: white;
+		text-decoration: none;
+	}
+
+	.main-nav {
+		text-align: center;
+		font-size: 1.1em;
+		font-weight: 600;
+	}
+
+	.main-nav li {
+		padding: 0.35% 4%;
+	}
+
+	.nav a:hover {
+		background-color: rgba(88, 11, 211, 0.3)
+	}
+
+	/******************************************  MAIN PAGE  ***************************************************/
+
+	.column {
+		float: left;
+		width: 33.3%;
+		margin-bottom: 16px;
+		padding: 0 8px;
+	}
+
+	.card {
+		box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+		margin: 8px;
+		background-color: #ada6c8;
+	}
+
+	.about-section {
+		padding: 50px;
+		text-align: center;
+		background-color: #474e5d;
+		color: white;
+	}
+
+	.container {
+		padding: 0 16px;
+	}
+
+	.container::after, .row::after {
+		content: "";
+		clear: both;
+		display: table;
+	}
+
+	.title {
+		color: white;
+	}
+
+	.button {
+		border: none;
+		outline: 0;
+		display: inline-block;
+		padding: 8px;
+		color: white;
+		background-color: #000;
+		text-align: center;
+		cursor: pointer;
+		width: 100%;
+	}
+
+	.button:hover {
+		background-color: #555;
+	}
+	  
+	@media screen and (max-width: 650px) {
+		.column {
+			width: 100%;
+			display: block;
+		}
+	}
+
+	/************************************************* FOOTER  **********************************************************/
+
+	.footer {
+		width: 100%;
+		position: relative;
+		height: auto;
+		background-color: rgb(55, 54, 70);
+	}
+	.footer .contain{
+		display: flex;
+		justify-content: space-around;
+	}
+	.footer .col {
+		width: 190px;
+		height: auto;
+		box-sizing: border-box;
+		-webkit-box-sizing: border-box;
+		-moz-box-sizing: border-box;
+		padding: 0px 20px 20px 20px;
+	}
+	.footer .col h1 {
+		margin: 0;
+		padding: 0;
+		font-size: 14px;
+		line-height: 17px;
+		padding: 20px 0px 5px 0px;
+		color: rgb(255,255,255);
+		font-weight: 550;
+		text-transform: uppercase;
+		letter-spacing: 0.25em;
+	}
+	.footer .col ul {
+		list-style-type: none;
+		margin: 0;
+		padding: 0;
+	}
+	.footer .col ul li {
+		color: rgba(255,255,255,0.6);
+		font-size: 15px;
+		letter-spacing: 1px;
+		font-family: inherit;
+		font-weight: bold;
+		padding: 5px 0px 5px 0px;
+		cursor: pointer;
+		transition: .2s;
+		-webkit-transition: .2s;
+		-moz-transition: .2s;
+	}
+	.social ul li {
+		display: block;
+		padding-right: 5px;
+	}
+
+	.footer .col ul li:hover{
+		color: #ffffff;
+		transition: .1s;
+		-webkit-transition: .1s;
+		-moz-transition: .1s;
+	}
+	.clearfix {
+		clear: both;
+	}
+  </style>
+
+  <body>
+
+    <header class="main-header">
+      <div class="top-bar">
+          <h2>Book Store</h2>
+          <div class="link">
+              <a href="http://localhost:3000/login"><i class="fas fa-user" style="margin-right:5px;color:white;"></i>Login or Create Account</a>
+          </div>
+      </div>
+      <nav class="nav main-nav">
+           <ul>
+                <li><a href="http://localhost:3000/">HOME</a></li>
+                <li><a href="http://localhost:3000/contact">CONTACT</a></li>
+                <li><a href="http://localhost:3000/about">ABOUT</a></li>
+                <li><a href="http://localhost:3000/login">LOGIN</a></li>
+                <li><a href="http://localhost:3000/register">REGISTER</a></li>
+            </ul>
+      </nav>
+    </header>
+	<br><br><br>
+    <div class="about-section">
+      <h1>About Us </h1>
+      <p>“I declare after all there is no enjoyment like reading!”- Jane Austen, Pride and Prejudice.
+
+      <p>Dear readers,</p>
+
+      <p>We offer huge collection of books in diverse category of Fiction, Non-fiction, Biographies, History, Religions, Self -Help, Children. We also sell in vast collection of Investments and Management, Computers, Engineering, Medical, College and School text references books proposed by different institutes as syllabus across the country. Besides to this, we also offer a large collection of E-Books at very fair pricing.</p>
+
+      <p>We attempt to extend the customer satisfaction by catering easy user-friendly search engine, quick and user-friendly payment options and quicker delivery systems. Upside to all of this, we are disposed to provide exciting offers and pleasant discounts on our books.</p>
+
+      <p>As well, we humbly invite all the sellers around the country to partner with us. We will surely provide you the platform for many sparkling domains and grow the our family.We would like to thank you for shopping with us. You can write us for any new thoughts at “bookstore@gmail.com” helping us to improvise for the reader satisfaction</p>
+    </div>
+	<br><br><br>
+    <div class="footer">
+      <div class="contain">
+          <div class="col company">
+              <h1>Company</h1>
+              <ul>
+                  <li>About Us</li>
+                  <li>Mission</li>
+                  <li>Vision</li>
+                  <li>Services</li>
+                  <li>Blog</li>
+              </ul>
+          </div>
+          <div class="col">
+              <h1>Policies</h1>
+              <ul>
+                  <li>Privacy Policies</li>
+                  <li>Terms of use</li>
+                  <li>Secure Shopping</li>
+                  <li>Copyright Policy</li>
+              </ul>
+          </div>
+          <div class="col">
+              <h1>Help</h1>
+              <ul>
+                  <li>Payment</li>
+                  <li>Shipping</li>
+                  <li>Return</li>
+                  <li>FAQ</li>
+              </ul>
+          </div>
+          <div class="col">
+              <h1>Resources</h1>
+              <ul>
+                  <li>Webmail</li>
+                  <li>Redeem code</li>
+                  <li>Site map</li>
+                  <li>Web templates</li>
+                  <li>Email templates</li>
+              </ul>
+          </div>
+          <div class="col">
+              <h1>Support</h1>
+              <ul>
+                  <li>Contact us</li>
+                  <li>Web chat</li>
+                  <li>Meet us</li>
+              </ul>
+          </div>
+          <div class="col social">
+              <h1>Social</h1>
+              <ul>
+                  <li><img src="Images/youtube.png" width="32" style="width: 32px;"></li>
+                  <li><img src="Images/twitter_1.png" width="32" style="width: 32px;"></li>
+                  <li><img src="Images/facebook_1.png" width="32" style="width: 32px;"></li>
+              </ul>
+          </div>
+          <div class="clearfix"></div>
+      </div>
+    </div>
+  </body>
+</html>

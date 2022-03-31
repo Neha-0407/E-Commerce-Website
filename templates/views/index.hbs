@@ -1,0 +1,913 @@
+<html>
+    <head>
+        <title>The Generics</title>
+        <meta name="description" content="This is the description">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.0/css/all.min.css">
+    </head>
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Raleway');
+        @import url("https://fonts.googleapis.com/css?family=Metal+Mania");
+        
+        @font-face {
+            font-family: "Booter - Zero Zero";
+            src: url("Fonts/Booter - Zero Zero.woff") format("woff"),
+                url("Fonts/Booter - Zero Zero.woff2") format("woff2");
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        * {
+            box-sizing: border-box;
+            font-family: Raleway;
+            color: #777;
+        }
+
+        html, body {
+            margin: 0;
+            padding: 0;
+            min-height: 100%;
+        }
+        .top-bar{
+            background-color: inherit;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-height: 80px;
+        }
+
+        .top-bar h2 {
+            margin-left: 15px;
+            color: white;
+        }
+
+        .top-bar a{
+            margin: 0 25px 0 0;
+            color: white;
+            text-decoration: none;
+        }
+
+        .top-bar a:hover{
+            background-color: rgba(255, 255, 255, .1);
+        }
+
+
+        .nav ul {
+            margin: 0;
+        }
+
+        .nav li {
+            display: inline-block;
+        }
+
+        .nav a {
+            display: inline-block;
+            padding: .5em;
+            color: white;
+            text-decoration: none;
+        }
+
+        .main-nav {
+            text-align: center;
+            font-size: 1.1em;
+            font-weight: 600;
+            background-color: #ada6c8;
+
+        }
+
+        .main-nav li {
+            padding: 0.5% 4%;
+        }
+
+        .nav a:hover {
+            background-color: rgba(255, 255, 255, .3)
+        }
+        .main-header {
+            background-color: rgba(0, 0, 0, .6);
+           
+        }
+
+        .heading {
+            text-align: center;
+            margin: 0;
+            font-size: 4em;
+            font-family: "Booter - Zero Zero";
+            font-weight: normal;
+            color: white;
+        }
+
+        .large {
+            
+            font-size: 8em;
+        }
+
+        .content-section {
+            margin: 1em;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 1.5em;
+        }
+        .section-header {
+            font-family: "Metal Mania";
+            font-weight: normal;
+            color: #333;
+            text-align: center;
+            font-size: 2.5em;
+        }
+
+        .about-band-image {
+            float: left;
+            height: 200px;
+            width: 200px;
+            margin: 15px;
+            border-radius: 50%;
+        }
+
+        .main-footer {
+            background-color: #ada6c8;
+            color: white;
+            padding: .25em 0;
+        }
+
+        .main-footer-container {
+            display: flex;
+            align-items: center;
+        }
+
+        .main-footer-container ul {
+            flex-grow: 1;
+            text-align: end;
+        }
+
+        .footer-nav li {
+            padding: 0 .5em;
+        }
+
+        .footer-nav img {
+            width: 30px;
+            height: 30px;
+        }
+
+        .btn {
+            text-align: center;
+            vertical-align: middle;
+            padding: .67em .67em;
+            cursor: pointer;
+        }
+
+        .btn-header {
+            margin: .5em 15% 2em 15%;
+            color: white;
+            border: 2px solid #2D9CDB;
+            background-color: rgba(255, 255, 255, .1);
+            border-radius: 0;
+            font-size: 1.5em;
+            font-weight: lighter;
+            padding-left: 2em;
+            padding-right: 2em;
+        }
+
+        .btn-header:hover {
+            background-color: rgba(255, 255, 255, .3);
+        }
+
+        .btn-play {
+            display: block;
+            margin: 0 auto;
+            color: #2D9CDB;
+            font-size: 4em;
+            border-radius: 50%;
+            width: 100px;
+            height: 100px;
+            padding: 0;
+            text-align: center;
+        }
+
+        .btn-primary {
+            color: white;
+            background-color: #ada6c8;
+            border: none;
+            border-radius: .3em;
+            font-weight: bold;
+        }
+
+        .btn-primary:hover {
+            background-color: #966aa5;
+        }
+
+        .tour-row {
+            border-bottom: 1px solid black;
+            padding-bottom: 1em;
+            margin-bottom: 1em;
+        }
+
+        .tour-row:last-child {
+            border: none;
+        }
+
+        .tour-item {
+            display: inline-block;
+            padding-right: .5em;
+        }
+
+        .tour-date {
+            color: #555;
+            width: 11%;
+            font-weight: bold;
+        }
+
+        .tour-city {
+            width: 24%;
+        }
+
+        .tour-arena {
+            width: 42%;
+        }
+
+        .tour-btn {
+            max-width: 19%;
+        }
+
+        .shop-item {
+            margin: 30px;
+        }
+
+        .shop-item-title {
+            display: block;
+            width: 100%;
+            text-align: center;
+            font-weight: bold;
+            font-size: 1.5em;
+            color: #333;
+            margin-bottom: 15px;
+        }
+
+        .shop-item-image {
+            height: 250px;
+        }
+
+        .shop-item-details {
+            display: flex;
+            align-items: center;
+            padding: 5px;
+        }
+
+        .shop-item-price {
+            flex-grow: 1;
+            color: #333;
+        }
+
+        .shop-items {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        .cart-header {
+            font-weight: bold;
+            font-size: 1.25em;
+            color: #333;
+        }
+
+        .cart-column {
+            display: flex;
+            align-items: center;
+            border-bottom: 1px solid black;
+            margin-right: 1.5em;
+            padding-bottom: 10px;
+            margin-top: 10px;
+        }
+
+        .cart-row {
+            display: flex;
+        }
+
+        .cart-item {
+            width: 45%;
+        }
+
+        .cart-price {
+            width: 20%;
+            font-size: 1.2em;
+            color: #333;
+            
+        }
+
+        .cart-quantity {
+            width: 35%;
+        }
+
+        .cart-item-title {
+            color: #333;
+            margin-left: .5em;
+            font-size: 1.2em;
+        }
+
+        .cart-item-image {
+            width: 75px;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .btn-danger {
+            color: white;
+            background-color: #ada6c8;
+            border: none;
+            border-radius: .3em;
+            font-weight: bold;
+        }
+
+        .btn-danger:hover {
+            background-color: #CC4C4C;
+        }
+
+        .cart-quantity-input {
+            height: 34px;
+            width: 50px;
+            border-radius: 5px;
+            border: 1px solid #966aa5;
+            background-color: #eee;
+            color: #333;
+            padding: 0;
+            text-align: center;
+            font-size: 1.2em;
+            margin-right: 25px;
+        }
+
+        .cart-row:last-child {
+            border-bottom: 1px solid black;
+        }
+
+        .cart-row:last-child .cart-column {
+            border: none;
+        }
+
+        .cart-total {
+            text-align: end;
+            margin-top: 10px;
+            margin-right: 10px;
+        }
+
+        .cart-total-title {
+            font-weight: bold;
+            font-size: 1.5em;
+            color: black;
+            margin-right: 20px;
+        }
+
+        .cart-total-price {
+            color: #333;
+            font-size: 1.1em;
+        }
+
+        .btn-purchase {
+            display: block;
+            margin: 40px auto 80px auto;
+            font-size: 1.75em;
+        }
+        
+        .cntr{
+            height: 525px;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: inherit;
+        }
+
+        .slideshow-container {
+            height: 505px;
+            width: 95%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 1px 2px 10px black;
+            background-color: rgb(55, 54, 70);
+        }
+        .navi{
+            position: absolute;
+            bottom: 120px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+        }
+
+        .dot {
+        cursor: pointer;
+        height: 15px;
+        width: 15px;
+        margin: 0 2px;
+        background-color: #bbb;
+        border-radius: 50%;
+        display: inline-block;
+        transition: background-color 0.6s ease;
+        }
+        .active, .dot:hover {
+        background-color: #717171;
+        }
+
+        .fade {
+        -webkit-animation-name: fade;
+        -webkit-animation-duration: 1.5s;
+        animation-name: fade;
+        animation-duration: 1.5s;
+        }
+
+        @-webkit-keyframes fade {
+        from {opacity: .4} 
+        to {opacity: 1}
+        }
+
+        @keyframes fade {
+        from {opacity: .4} 
+        to {opacity: 1}
+        }
+        .img2 {
+            vertical-align: middle;
+            width: 1443px;
+            height: 505px;
+        }
+        /****************************************** FOOTER  ***************************************************/
+
+        .footer {
+            width: 100%;
+            position: relative;
+            height: auto;
+            background-color: rgb(55, 54, 70);
+        }
+        .footer .contain{
+            display: flex;
+            justify-content: space-around;
+        }
+        .footer .col {
+            width: 190px;
+            height: auto;
+            /* float: left; */
+            box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            padding: 0px 20px 20px 20px;
+        }
+        /* .footer .co {
+            width: 190px;
+            height: auto;
+            float: left;
+            box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            padding: 0px 20px 20px 20px;
+        } */
+        .footer .col h1 {
+            margin: 0;
+            padding: 0;
+            font-size: 14px;
+            line-height: 17px;
+            padding: 20px 0px 5px 0px;
+            color: rgb(255,255,255);
+            font-weight: 550;
+            text-transform: uppercase;
+            letter-spacing: 0.250em;
+        }
+        .footer .col ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+        .footer .col ul li {
+            color: rgba(255,255,255,0.6);
+            font-size: 15px;
+            letter-spacing: 1px;
+            font-family: inherit;
+            font-weight: bold;
+            padding: 5px 0px 5px 0px;
+            cursor: pointer;
+            transition: .2s;
+            -webkit-transition: .2s;
+            -moz-transition: .2s;
+        }
+        .social ul li {
+            display: block;
+            padding-right: 5px;
+        }
+
+        .footer .col ul li:hover{
+            color: #ffffff;
+            transition: .1s;
+            -webkit-transition: .1s;
+            -moz-transition: .1s;
+        }
+        .clearfix {
+            clear: both;
+        }
+    </style>
+    <script>
+        if (document.readyState == 'loading') {
+            document.addEventListener('DOMContentLoaded', ready)
+        } else {
+            ready()
+        }
+
+        function ready() {
+            var removeCartItemButtons = document.getElementsByClassName('btn-danger')
+            for (var i = 0; i < removeCartItemButtons.length; i++) {
+                var button = removeCartItemButtons[i]
+                button.addEventListener('click', removeCartItem)
+            }
+
+            var quantityInputs = document.getElementsByClassName('cart-quantity-input')
+            for (var i = 0; i < quantityInputs.length; i++) {
+                var input = quantityInputs[i]
+                input.addEventListener('change', quantityChanged)
+            }
+
+            var addToCartButtons = document.getElementsByClassName('shop-item-button')
+            console.log(addToCartButtons)
+            for (var i = 0; i < addToCartButtons.length; i++) {
+                var button = addToCartButtons[i]
+                button.addEventListener('click', addToCartClicked)
+            }
+
+            document.getElementsByClassName('btn-purchase')[0].addEventListener('click', purchaseClicked)
+        }
+
+        function purchaseClicked() {
+            var cartItems = document.getElementsByClassName('cart-items')[0]
+            var total = parseFloat(document.getElementsByClassName('cart-total-price')[0].innerText.replace('Rs.', ''))
+            const data = {total};
+            const options = {
+                method: 'POST',
+                headers:{
+                    'Content-Type':'application/json'
+                },
+                body: JSON.stringify(data)
+            };
+            fetch('/purchase',options);
+            console.log(total)
+            while (cartItems.hasChildNodes()) {
+                cartItems.removeChild(cartItems.firstChild)
+            }
+            updateCartTotal()
+        }
+
+        function removeCartItem(event) {
+            var buttonClicked = event.target
+            var title = buttonClicked.parentElement.parentElement.getElementsByClassName('cart-item-title')[0].innerText
+            const data = {title};
+            const options = {
+                method: 'POST',
+                headers:{
+                    'Content-Type':'application/json'
+                },
+                body: JSON.stringify(data)
+            };
+            fetch('/remove',options);
+            buttonClicked.parentElement.parentElement.remove()
+            updateCartTotal()
+        }
+
+        function quantityChanged(event) {
+            var input = event.target
+            var title = input.parentElement.parentElement.getElementsByClassName('cart-item-title')[0].innerText
+            var qty = input.value
+            if (isNaN(qty) || qty <= 0) {
+                qty = 1
+            }
+            const data = {qty,title};
+            const options = {
+                method: 'POST',
+                headers:{
+                    'Content-Type':'application/json'
+                },
+                body: JSON.stringify(data)
+            };
+            fetch('/update',options);
+            updateCartTotal()
+        }
+
+        function addToCartClicked(event) {
+            var button = event.target
+            var shopItem = button.parentElement.parentElement
+            var title = shopItem.getElementsByClassName('shop-item-title')[0].innerText
+            var price = shopItem.getElementsByClassName('shop-item-price')[0].innerText
+            var p = parseFloat(shopItem.getElementsByClassName('shop-item-price')[0].innerText.replace('Rs.', ''))
+            var imageSrc = shopItem.getElementsByClassName('shop-item-image')[0].src
+            var qty = 1
+            const data = {title,p,imageSrc,qty};
+            const options = {
+                method: 'POST',
+                headers:{
+                    'Content-Type':'application/json'
+                },
+                body: JSON.stringify(data)
+            };
+            fetch('/add',options);
+            addItemToCart(title,price,imageSrc,qty)
+            updateCartTotal()
+        }
+        function addItemToCart(title, price, imageSrc) {
+            var cartRow = document.createElement('div')
+            cartRow.classList.add('cart-row')
+            var cartItems = document.getElementsByClassName('cart-items')[0]
+            var cartItemNames = cartItems.getElementsByClassName('cart-item-title')
+            for (var i = 0; i < cartItemNames.length; i++) {
+                if (cartItemNames[i].innerText == title) {
+                    alert('This item is already added to the cart')
+                    return
+                }
+            }
+            var cartRowContents = `
+                <div class="cart-item cart-column">
+                    <img class="cart-item-image" src="${imageSrc}" width="100" height="100">
+                    <span class="cart-item-title">${title}</span>
+                </div>
+                <span class="cart-price cart-column">${price}</span>
+                <div class="cart-quantity cart-column">
+                    <input class="cart-quantity-input" type="number" value="1">
+                    <button class="btn btn-danger" type="button">REMOVE</button>
+                </div>`
+            cartRow.innerHTML = cartRowContents
+            cartItems.append(cartRow)
+            cartRow.getElementsByClassName('btn-danger')[0].addEventListener('click', removeCartItem)
+            cartRow.getElementsByClassName('cart-quantity-input')[0].addEventListener('change', quantityChanged)
+        }
+
+        function updateCartTotal() {
+            var cartItemContainer = document.getElementsByClassName('cart-items')[0]
+            var cartRows = cartItemContainer.getElementsByClassName('cart-row')
+            var total = 0
+            for (var i = 0; i < cartRows.length; i++) {
+                var cartRow = cartRows[i]
+                var title = cartRow.getElementsByClassName('cart-item-title')[0].innerText
+                var priceElement = cartRow.getElementsByClassName('cart-price')[0]
+                var quantityElement = cartRow.getElementsByClassName('cart-quantity-input')[0]
+                var price = parseFloat(priceElement.innerText.replace('Rs.', ''))
+                var quantity = quantityElement.value
+                total = total + (price * quantity)
+            }
+            total = Math.round(total * 100) / 100
+            document.getElementsByClassName('cart-total-price')[0].innerText = 'Rs.' + total
+        }
+    </script>
+    <body>
+        <header class="main-header">
+            <div class="top-bar">
+                <h2>Book Store</h2>
+                <div class="link">
+                    <a href="http://localhost:3000/login"><i class="fas fa-user" style="margin-right:5px;color:white;"></i>{{email}}</a>
+                </div>
+            </div>
+            <nav class = "nav main-nav">
+                <ul>
+                    <li><a href="http://localhost:3000/">HOME</a></li>
+                    <li><a href="http://localhost:3000/contact">CONTACT</a></li>
+                    <li><a href="http://localhost:3000/about">ABOUT</a></li>
+                    <li><a href="http://localhost:3000/login">LOGIN</a></li>
+                    <li><a href="http://localhost:3000/register">REGISTER</a></li>
+                </ul>
+            </nav>
+        </header>
+        <div>
+			<div class = "cntr">
+				<div class="slideshow-container">
+					<div class="slide fade">
+						<img src="Images/slider2.jpeg" class = "img2">
+					</div>
+					<div class="slide fade">
+						<img src="Images/slider1.jpeg" class = "img2">
+					</div>
+					<div class="slide fade">
+						<img src="Images/slider3.jpeg" class = "img2">
+					</div>
+					<br>
+					<div class="navi">
+					  <span class="dot" onclick="currentSlide(1)"></span>
+					  <span class="dot" onclick="currentSlide(2)"></span>
+					  <span class="dot" onclick="currentSlide(3)"></span>
+					</div>
+				</div>
+                <script>
+                    //SLIDER CODE
+                    var slideIndex = 1;
+                    showSlides(slideIndex);
+
+                    function currentSlide(n) {
+                        showSlides(slideIndex = n);
+                    }
+
+                    function showSlides(n) {
+                        var i;
+                        var slides = document.getElementsByClassName("slide");
+                        var dots = document.getElementsByClassName("dot");
+                        if (n > slides.length) {slideIndex = 1}    
+                        if (n < 1) {slideIndex = slides.length}
+                        for (i = 0; i < slides.length; i++) {
+                            slides[i].style.display = "none";  
+                        }
+                        for (i = 0; i < dots.length; i++) {
+                            dots[i].className = dots[i].className.replace(" active", "");
+                        }
+                        slides[slideIndex-1].style.display = "block";  
+                        dots[slideIndex-1].className += " active";
+                    }
+                </script>
+			</div>
+		</div>
+
+        <section class="container content-section">
+            <h2 class="section-header">Biographies and Autographies</h2>
+            <div class="shop-items">
+                <div class="shop-item">
+                    <span class="shop-item-title">Wings Of Fire</span>
+                    <img class="shop-item-image" src="Images/1.png">
+                    <div class="shop-item-details">
+                        <span class="shop-item-price">Rs.192</span>
+                        <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
+                    </div>
+                </div>
+                <div class="shop-item">
+                    <span class="shop-item-title">Steve Jobs</span>
+                    <img class="shop-item-image" src="Images/2.png">
+                    <div class="shop-item-details">
+                        <span class="shop-item-price">Rs.440</span>
+                        <button class="btn btn-primary shop-item-button"type="button">ADD TO CART</button>
+                    </div>
+                </div>
+                <div class="shop-item">
+                    <span class="shop-item-title">A Promised Land</span>
+                    <img class="shop-item-image" src="Images/4.png">
+                    <div class="shop-item-details">
+                        <span class="shop-item-price">Rs.1374</span>
+                        <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+		<section class="container content-section">
+            <h2 class="section-header">Children And Teens</h2>
+            <div class="shop-items">
+                <div class="shop-item">
+                    <span class="shop-item-title">Dasavatara</span>
+                    <img class="shop-item-image" src="Images/7.png">
+                    <div class="shop-item-details">
+                        <span class="shop-item-price">Rs.196</span>
+                        <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
+                    </div>
+                </div>
+                <div class="shop-item">
+                    <span class="shop-item-title">The Nameless God</span>
+                    <img class="shop-item-image" src="Images/6.png">
+                    <div class="shop-item-details">
+                        <span class="shop-item-price">Rs.199</span>
+                        <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
+                    </div>
+                </div>
+				<div class="shop-item">
+                    <span class="shop-item-title">The Crocodile</span>
+                    <img class="shop-item-image" src="Images/8.png">
+                    <div class="shop-item-details">
+                        <span class="shop-item-price">Rs.196</span>
+                        <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="container content-section">
+            <h2 class="section-header">History</h2>
+            <div class="shop-items">
+                <div class="shop-item">
+                    <span class="shop-item-title">Modern India</span>
+                    <img class="shop-item-image" src="Images/13.png">
+                    <div class="shop-item-details">
+                        <span class="shop-item-price">Rs.219</span>
+                        <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
+                    </div>
+                </div>
+                <div class="shop-item">
+                    <span class="shop-item-title">Breaking India</span>
+                    <img class="shop-item-image" src="Images/14.png">
+                    <div class="shop-item-details">
+                        <span class="shop-item-price">Rs.610</span>
+                        <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
+                    </div>
+                </div>
+				<div class="shop-item">
+                    <span class="shop-item-title">An Era Of Darkness</span>
+                    <img class="shop-item-image" src="Images/16.png">
+                    <div class="shop-item-details">
+                        <span class="shop-item-price">Rs.646</span>
+                        <button class="btn btn-primary shop-item-button" type="button" >ADD TO CART</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+		<section class="container content-section">
+            <h2 class="section-header">Mystery,Crime And Thriller</h2>
+            <div class="shop-items">
+                <div class="shop-item">
+                    <span class="shop-item-title">Angels and Demons</span>
+                    <img class="shop-item-image" src="Images/24.png">
+                    <div class="shop-item-details">
+                        <span class="shop-item-price">Rs.259</span>
+                        <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
+                    </div>
+                </div>
+                <div class="shop-item">
+                    <span class="shop-item-title">The Silent Patient</span>
+                    <img class="shop-item-image" src="Images/23.png">
+                    <div class="shop-item-details">
+                        <span class="shop-item-price">Rs.279</span>
+                        <button class="btn btn-primary shop-item-button"type="button">ADD TO CART</button>
+                    </div>
+                </div>
+                <div class="shop-item">
+                    <span class="shop-item-title">Sherlock Holmes</span>
+                    <img class="shop-item-image" src="../Images/22.png">
+                    <div class="shop-item-details">
+                        <span class="shop-item-price">Rs.499</span>
+                        <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+		
+		<section class="container content-section">
+            <h2 class="section-header">CART</h2>
+            <div class="cart-row">
+                <span class="cart-item cart-header cart-column">ITEM</span>
+                <span class="cart-price cart-header cart-column">PRICE</span>
+                <span class="cart-quantity cart-header cart-column">QUANTITY</span>
+            </div>
+            <div class="cart-items">
+            </div>
+            <div class="cart-total">
+                <strong class="cart-total-title">Total</strong>
+                <span class="cart-total-price">Rs.0</span>
+            </div>
+            <a href = "http://localhost:3000/order"><button class="btn btn-primary btn-purchase" type="button">PURCHASE</button></a>
+        </section>
+        
+        
+        <div class="footer">
+            <div class="contain">
+                <div class="col company">
+                    <h1>Company</h1>
+                    <ul>
+                        <li>About Us</li>
+                        <li>Mission</li>
+                        <li>Vision</li>
+                        <li>Services</li>
+                        <li>Blog</li>
+                    </ul>
+                </div>
+                <div class="col">
+                    <h1>Policies</h1>
+                    <ul>
+                        <li>Privacy Policies</li>
+                        <li>Terms of use</li>
+                        <li>Secure Shopping</li>
+                        <li>Copyright Policy</li>
+                    </ul>
+                </div>
+                <div class="col">
+                    <h1>Help</h1>
+                    <ul>
+                        <li>Payment</li>
+                        <li>Shipping</li>
+                        <li>Return</li>
+                        <li>FAQ</li>
+                    </ul>
+                </div>
+                <div class="col">
+                    <h1>Resources</h1>
+                    <ul>
+                        <li>Webmail</li>
+                        <li>Redeem code</li>
+                        <li>Site map</li>
+                        <li>Web templates</li>
+                        <li>Email templates</li>
+                    </ul>
+                </div>
+                <div class="col">
+                    <h1>Support</h1>
+                    <ul>
+                        <li>Contact us</li>
+                        <li>Web chat</li>
+                        <li>Meet us</li>
+                    </ul>
+                </div>
+                <div class="col social">
+                    <h1>Social</h1>
+                    <ul>
+                        <li><img src="Images/youtube.png" width="32" style="width: 32px;"></li>
+                        <li><img src="Images/twitter_1.png" width="32" style="width: 32px;"></li>
+                        <li><img src="Images/facebook_1.png" width="32" style="width: 32px;"></li>
+                    </ul>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+    </body>
+</html>

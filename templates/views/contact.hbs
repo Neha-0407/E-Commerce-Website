@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.0/css/all.min.css">
+    <link rel="stylesheet" href="Contact_Us.css">
+    <title>Contact Us !</title>
+  </head>
+
+  <body>
+  <style>
+	@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+	body{
+		font-family: 'Roboto', sans-serif;
+		margin: 0;
+	}
+
+	/******************************************  HEADER  ***************************************************/
+
+	.main-header {
+		width: 100%;
+		background-color: rgba(0, 0, 0, 0.6);
+		background-size: cover;
+		background-image: url('books.jpg');
+		background-repeat: no-repeat;
+		background-size: 1500px 300px;
+		padding-bottom: 5px;
+		top: 0;
+	}
+
+	.top-bar{
+		background-color: inherit;
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		max-height: 50px;
+	}
+
+	.top-bar h2 {
+		margin-left: 15px;
+		color: white;
+	}
+
+	.top-bar a{
+		margin: 0 25px 0 0;
+		color: white;
+		text-decoration: none;
+	}
+
+	.top-bar a:hover{
+		background-color: rgba(255, 255, 255, .1);
+	}
+
+	.nav ul {
+		margin: 0;
+	}
+
+	.nav li {
+		display: inline-block;
+	}
+
+	.nav a {
+		display: inline-block;
+		padding: 0.4em;
+		padding-bottom: 0.3em;
+		color: white;
+		text-decoration: none;
+	}
+
+	.main-nav {
+		text-align: center;
+		font-size: 1.1em;
+		font-weight: 600;
+	}
+
+	.main-nav li {
+		padding: 0.35% 4%;
+	}
+
+	.nav a:hover {
+		background-color: rgba(88, 11, 211, 0.3)
+	}
+
+	/******************************************  MAIN PAGE  ***************************************************/
+
+	.main{
+		text-align: center;
+	}
+
+	form{
+		font-family: 'Roboto', sans-serif;
+		font-size: 18px;
+		font-weight: 500;
+	}
+
+	label{
+		text-align: center;
+	}
+
+	.container {
+		border-radius: 8px;
+		background-color: #ada6c8;
+		margin: 20px 35px 20px 35px;
+		padding: 20px;
+	}
+
+	input, input:hover, input:focus{
+		outline: none;
+	}
+
+	input[type=text], select, textarea {
+	  width: 100%;
+	  padding: 12px;
+	  border: 1px solid #ccc;
+	  border-radius: 4px;
+	  box-sizing: border-box;
+	  margin-top: 6px;
+	  margin-bottom: 16px;
+	  resize: vertical;
+	}
+
+	input[type=submit] {
+	  background-color: rgb(78, 192, 33);
+	  color: white;
+	  padding: 12px 20px;
+	  border: none;
+	  border-radius: 4px;
+	  cursor: pointer;
+	  text-align: center;
+	}
+
+	input[type=submit]:hover {
+		background-color: white;
+		color: #45a049;
+	}
+
+	/************************************************* FOOTER  **********************************************************/
+
+	.footer {
+		width: 100%;
+		position: relative;
+		height: auto;
+		background-color: rgb(55, 54, 70);
+	}
+	.footer .contain{
+		display: flex;
+		justify-content: space-around;
+	}
+	.footer .col {
+		width: 190px;
+		height: auto;
+		box-sizing: border-box;
+		-webkit-box-sizing: border-box;
+		-moz-box-sizing: border-box;
+		padding: 0px 20px 20px 20px;
+	}
+	.footer .col h1 {
+		margin: 0;
+		padding: 0;
+		font-size: 14px;
+		line-height: 17px;
+		padding: 20px 0px 5px 0px;
+		color: rgb(255,255,255);
+		font-weight: 550;
+		text-transform: uppercase;
+		letter-spacing: 0.25em;
+	}
+	.footer .col ul {
+		list-style-type: none;
+		margin: 0;
+		padding: 0;
+	}
+	.footer .col ul li {
+		color: rgba(255,255,255,0.6);
+		font-size: 15px;
+		letter-spacing: 1px;
+		font-family: inherit;
+		font-weight: bold;
+		padding: 5px 0px 5px 0px;
+		cursor: pointer;
+		transition: .2s;
+		-webkit-transition: .2s;
+		-moz-transition: .2s;
+	}
+	.social ul li {
+		display: block;
+		padding-right: 5px;
+	}
+
+	.footer .col ul li:hover{
+		color: #ffffff;
+		transition: .1s;
+		-webkit-transition: .1s;
+		-moz-transition: .1s;
+	}
+	.clearfix {
+		clear: both;
+	}
+  </style>
+
+    <header class="main-header">
+      <div class="top-bar">
+          <h2>Book Store</h2>
+          <div class="link">
+              <a href="http://localhost:3000/login"><i class="fas fa-user" style="margin-right:5px;color:white;"></i>Login or Create Account</a>
+          </div>
+      </div>
+      <nav class="nav main-nav">
+            <ul>
+                <li><a href="http://localhost:3000/">HOME</a></li>
+                <li><a href="http://localhost:3000/contact">CONTACT</a></li>
+                <li><a href="http://localhost:3000/about">ABOUT</a></li>
+                <li><a href="http://localhost:3000/login">LOGIN</a></li>
+                <li><a href="http://localhost:3000/register">REGISTER</a></li>
+            </ul>
+      </nav>
+
+  </header>
+
+    <h1 class="main">Contact Us</h1>
+
+    <div class="container">
+      <form action="/action_page.php">
+        <label for="fname">First Name</label>
+        <input type="text" id="fname" name="firstname" placeholder="Your name..">
+
+        <label for="lname">Last Name</label>
+        <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+
+        <label for="country">Country</label>
+        <select id="country" name="country">
+        <option value="india">India</option>
+          <option value="australia">Australia</option>
+          <option value="canada">Canada</option>
+          <option value="usa">USA</option>
+          <option value="china">China</option>
+            <option value="japan">Japan</option>
+        </select>
+
+        <label for="subject">Subject</label>
+        <textarea id="subject" name="subject" style="height:200px"></textarea>
+
+        <input type="submit" value="Submit">
+      </form>
+    </div>
+
+    <div class="footer">
+      <div class="contain">
+          <div class="col company">
+              <h1>Company</h1>
+              <ul>
+                  <li>About Us</li>
+                  <li>Mission</li>
+                  <li>Vision</li>
+                  <li>Services</li>
+                  <li>Blog</li>
+              </ul>
+          </div>
+          <div class="col">
+              <h1>Policies</h1>
+              <ul>
+                  <li>Privacy Policies</li>
+                  <li>Terms of use</li>
+                  <li>Secure Shopping</li>
+                  <li>Copyright Policy</li>
+              </ul>
+          </div>
+          <div class="col">
+              <h1>Help</h1>
+              <ul>
+                  <li>Payment</li>
+                  <li>Shipping</li>
+                  <li>Return</li>
+                  <li>FAQ</li>
+              </ul>
+          </div>
+          <div class="col">
+              <h1>Resources</h1>
+              <ul>
+                  <li>Webmail</li>
+                  <li>Redeem code</li>
+                  <li>Site map</li>
+                  <li>Web templates</li>
+                  <li>Email templates</li>
+              </ul>
+          </div>
+          <div class="col">
+              <h1>Support</h1>
+              <ul>
+                  <li>Contact us</li>
+                  <li>Web chat</li>
+                  <li>Meet us</li>
+              </ul>
+          </div>
+          <div class="col social">
+              <h1>Social</h1>
+              <ul>
+                  <li><img src="Images/youtube.png" width="32" style="width: 32px;"></li>
+                  <li><img src="Images/twitter_1.png" width="32" style="width: 32px;"></li>
+                  <li><img src="Images/facebook_1.png" width="32" style="width: 32px;"></li>
+              </ul>
+          </div>
+          <div class="clearfix"></div>
+      </div>
+    </div>
+
+  </body>
+</html>

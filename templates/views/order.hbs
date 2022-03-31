@@ -1,0 +1,356 @@
+
+<html lang="en">
+    <head>
+        <title>Delivery Details</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.0/css/all.min.css">
+    </head>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
+        body{
+            font-family: 'Roboto', sans-serif;
+            background: linear-gradient( to right, rgb(48, 86, 151), rgb(211, 72, 169));
+        }
+          body{
+            font-family: 'Roboto', sans-serif;
+            background: linear-gradient( to right, rgb(48, 86, 151), rgb(211, 72, 169));
+            margin: 0;
+        }
+
+        .main-header {
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.6);
+            background-size: cover;
+            background-image: url('books.jpg');
+            background-repeat: no-repeat;
+            background-size: 1500px 300px;
+            padding-bottom: 5px;
+            top: 0;
+        }
+
+        .top-bar{
+            background-color: inherit;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-height: 50px;
+        }
+
+        .top-bar h2 {
+            margin-left: 15px;
+            color: white;
+        }
+
+        .top-bar a{
+            margin: 0 25px 0 0;
+            color: white;
+            text-decoration: none;
+        }
+
+        .top-bar a:hover{
+            background-color: rgba(255, 255, 255, .1);
+        }
+
+        .nav ul {
+            margin: 0;
+        }
+
+        .nav li {
+            display: inline-block;
+        }
+
+        .nav a {
+            display: inline-block;
+            padding: 0.4em;
+            padding-bottom: 0.3em;
+            color: white;
+            text-decoration: none;
+        }
+
+        .main-nav {
+            text-align: center;
+            font-size: 1.1em;
+            font-weight: 600;
+        }
+
+        .main-nav li {
+            padding: 0.35% 4%;
+        }
+
+        .nav a:hover {
+            background-color: rgba(88, 11, 211, 0.3)
+        }
+       .outerOrder{
+            padding: 5px;
+            position: relative;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            -webkit-transform: translate(-50%, -50%);
+            width: 37vw;
+            max-width: 370px;
+            height: 87vh;
+            max-height: 7850px;
+            border: none;
+            border-radius: 14px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.1);
+            -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
+            box-shadow: 10px 10px 6px rgba(0, 0, 0, 0.2);
+            color: rgba(255, 255, 255, 1);
+        }
+
+        form{
+            margin: 30px;
+            margin-top: 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+            -webkit-transition: all 0.1s ease-in-out;
+            transition: all 0.1s ease-in-out;
+        }
+
+        .submit{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0 0 0;
+            border: 1px solid gray;
+            border-radius: 12px;
+            font-size: 14px;
+            background-color: rgb(78, 192, 33) ;
+            color: rgb(255, 255, 255);
+        }
+        .submit:hover{
+            cursor: pointer;
+            transition: ease-in;
+            -webkit-transition: ease-in;
+            color: rgb(78, 192, 33) ;
+            background-color: rgb(255, 255, 255);
+            font-weight: 500;
+            font-size: 16px;
+        }
+
+        input[type=text], input[type=password] ,input[type=Number] {
+        width: 100%;
+        padding: 15px;
+        margin: 5px 0 22px 0;
+        display: inline-block;
+        border: 1px solid gray;
+        border-radius: 12px;
+        border: none;
+        background: #f1f1f1;
+        }
+
+        input[type=text]:focus, input[type=password]:focus {
+        background-color: #ddd;
+        outline: none;
+        }
+        .outerOrder a{
+            text-decoration: none;
+        }
+
+        .outerOrder a:link {
+            color: rgb(222, 255, 75);
+        }
+
+        .outerOrder a:visited{
+            color: rgb(255, 213, 136);
+        }
+
+        .outerOrder a:hover {
+            cursor: pointer;
+            color: rgb(211, 202, 72);
+            transition: ease-in-out;
+        }
+        /****************************************** FOOTER  ***************************************************/
+
+        .footer {
+            width: 100%;
+            position: relative;
+            height: auto;
+            background-color: rgb(55, 54, 70);
+        }
+        .footer .contain{
+            display: flex;
+            justify-content: space-around;
+        }
+        .footer .col {
+            width: 190px;
+            height: auto;
+            /* float: left; */
+            box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            padding: 0px 20px 20px 20px;
+        }
+        .footer .col h1 {
+            margin: 0;
+            padding: 0;
+            font-size: 14px;
+            line-height: 17px;
+            padding: 20px 0px 5px 0px;
+            color: rgb(255,255,255);
+            font-weight: 550;
+            text-transform: uppercase;
+            letter-spacing: 0.250em;
+        }
+        .footer .col ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+        .footer .col ul li {
+            color: rgba(255,255,255,0.6);
+            font-size: 15px;
+            letter-spacing: 1px;
+            font-family: inherit;
+            font-weight: bold;
+            padding: 5px 0px 5px 0px;
+            cursor: pointer;
+            transition: .2s;
+            -webkit-transition: .2s;
+            -moz-transition: .2s;
+        }
+        .social ul li {
+            display: block;
+            padding-right: 5px;
+        }
+
+        .footer .col ul li:hover{
+            color: #ffffff;
+            transition: .1s;
+            -webkit-transition: .1s;
+            -moz-transition: .1s;
+        }
+        .clearfix {
+            clear: both;
+        }
+    </style>
+	<script>
+		function OrderDetails(){
+			var name=document.getElementById("t1").value;
+			var num= document.getElementById("t3").value;
+			var n = /^[A-Za-z]+$/;
+			var numbers=/^[0-9]+$/;
+            var Flag = -1;
+			if(name=='')
+			{
+				alert('Name Field Cannot be empty');
+			}
+			else if(num=='')
+			{
+			alert('Please enter Phone number');
+			}
+			else if(numbers.test(num) == false)
+			{
+			alert('Please enter only digits in phone number');
+			}
+			else if(document.getElementById("t3").value.length != 10)
+			{
+			alert ('Phone number should contain 10 digits');
+			}
+			else
+			{
+			alert('Order Successful');
+			}
+		}
+	</script>
+    <body>
+        <header class="main-header">
+            <div class="top-bar">
+                <h2>Book Store</h2>
+                
+            </div>
+            <nav class = "nav main-nav">
+                <ul>
+                    <li><a href="http://localhost:3000/">HOME</a></li>
+                    <li><a href="http://localhost:3000/contact">CONTACT</a></li>
+                    <li><a href="http://localhost:3000/about">ABOUT</a></li>
+                    <li><a href="http://localhost:3000/login">LOGIN</a></li>
+                    <li><a href="http://localhost:3000/register">REGISTER</a></li>
+                </ul>
+            </nav>
+        </header>
+        <div class="outerOrder">
+            <form action="/order" method="POST">
+                <h3>Where do we deliver to you ?</h3>
+                <input type="text" id="t1" name="name" placeholder="Full Name" required>
+				<input type="Number" id="t3" name="phone" placeholder="Phone Number" required>
+                <input type="Number"  name="pincode" placeholder="Pincode" required>
+				<input type="text"  placeholder="Street Address" name="address"  required>
+                <input type="text"  placeholder="City" name="city"  required>
+                <input type="text"  placeholder="State" name="state"  required>
+                <input type="text"  placeholder="Country" name="country"  required>
+                <button type="submit" class = "btn submit" onclick="OrderDetails()">Order</button>
+            </form>
+        </div>
+        <br><br><br><br><br>
+        <div class="footer">
+            <div class="contain">
+                <div class="col company">
+                    <h1>Company</h1>
+                    <ul>
+                        <li>About Us</li>
+                        <li>Mission</li>
+                        <li>Vision</li>
+                        <li>Services</li>
+                        <li>Blog</li>
+                    </ul>
+                </div>
+                <div class="col">
+                    <h1>Policies</h1>
+                    <ul>
+                        <li>Privacy Policies</li>
+                        <li>Terms of use</li>
+                        <li>Secure Shopping</li>
+                        <li>Copyright Policy</li>
+                    </ul>
+                </div>
+                <div class="col">
+                    <h1>Help</h1>
+                    <ul>
+                        <li>Payment</li>
+                        <li>Shipping</li>
+                        <li>Return</li>
+                        <li>FAQ</li>
+                    </ul>
+                </div>
+                <div class="col">
+                    <h1>Resources</h1>
+                    <ul>
+                        <li>Webmail</li>
+                        <li>Redeem code</li>
+                        <li>Site map</li>
+                        <li>Web templates</li>
+                        <li>Email templates</li>
+                    </ul>
+                </div>
+                <div class="col">
+                    <h1>Support</h1>
+                    <ul>
+                        <li>Contact us</li>
+                        <li>Web chat</li>
+                        <li>Meet us</li>
+                    </ul>
+                </div>
+                <div class="col social">
+                    <h1>Social</h1>
+                    <ul>
+                        <li><img src="Images/youtube.png" width="32" style="width: 32px;"></li>
+                        <li><img src="Images/twitter_1.png" width="32" style="width: 32px;"></li>
+                        <li><img src="Images/facebook_1.png" width="32" style="width: 32px;"></li>
+                    </ul>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+    </body>
+</html>
